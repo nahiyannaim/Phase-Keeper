@@ -64,7 +64,8 @@ body {
   height: auto;
 }
 
-.input {
+.addContainer > input {
+  margin-right: 10px;
   text-align: center;
   font-size: 3rem;
   font-weight: 200;
@@ -73,7 +74,17 @@ body {
   height: 50px;
 }
 
-.addbutton {
-  width: 245px;
-  height: 150px;
+.addContainer > button {
+  /* font-size: 16px; */
+  padding: 12px 16px;
+  font-size: 20px;
+  cursor: pointer;
+}
+button > i {
+  /* width: 20px;
+  height: 20px; */
+  margin-right: 10px;
+}
+.addContainer > button:hover {
+  /* background-color: rgba(255, 255, 255, 0.213); */
 }

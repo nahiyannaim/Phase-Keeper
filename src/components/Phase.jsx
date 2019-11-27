@@ -2,10 +2,14 @@ import React from "react";
 import "../styles/phase.css";
 
 const Phase = props => {
+  const handlePhaseClick = () => {
+    alert("lol");
+  };
+
   return (
-    <div className="phase-circle">
+    <button className="phase-circle" type="button" onClick={handlePhaseClick}>
       <p className="phase-number">{props.phaseNum}</p>
-    </div>
+    </button>
   );
 };
 

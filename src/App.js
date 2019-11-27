@@ -59,6 +59,7 @@ class App extends React.Component {
           onClick={this.handleAddPlayer}
           disabled={!this.state.value}
         >
+          <i className="fa fa-plus"> </i>
           Add Player
         </button>
       </div>
