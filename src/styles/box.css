@@ -1,0 +1,40 @@
+.box {
+  margin: 4%;
+  font-weight: 200;
+  width: 450px;
+  height: 350px;
+  display: inline-block;
+
+  /* background: radial-gradient(
+        circle at top left,
+        rgb(255, 255, 255),
+        rgba(255, 255, 255, 0)
+      ),
+      radial-gradient(
+        circle at bottom left,
+        rgba(124, 223, 253, 0.842),
+        rgba(255, 255, 255, 0)
+      ); */
+
+  border: 1px solid rgba(200, 200, 200, 1);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px 4px rgba(161, 161, 161, 0.4);
+}
+
+.box-header {
+  overflow-wrap: break-word;
+  color: #6c7992;
+  margin-top: -8%;
+  text-align: center;
+  width: 100%;
+  height: 20%;
+  font-size: 3.2rem;
+}
+
+.box-content {
+  margin-top: 16%;
+  text-align: center;
+  width: 100%;
+  height: 76%;
+  font-size: 2.2rem;
+}

@@ -1,0 +1,79 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.App {
+  text-align: center;
+  /* background: radial-gradient(
+      circle at top left,
+      rgb(255, 255, 255),
+      rgba(255, 255, 255, 0)
+    ),
+    radial-gradient(
+      circle at bottom left,
+      rgba(166, 234, 243, 0.842),
+      rgba(255, 255, 255, 0)
+    ); */
+}
+
+.playersBoxes {
+  left: 0;
+  width: 75%;
+  margin-left: -22%;
+  margin-top: 1%;
+  display: inline-block;
+}
+
+.phasesList {
+  cursor: pointer;
+  margin-left: 80%;
+  margin-top: 10%;
+  position: fixed;
+  text-align: left;
+  float: right;
+  font-size: 1.6rem;
+  font-weight: 200;
+  overflow-wrap: normal;
+}
+
+.phasesList > p {
+  color: #435a85;
+  /* border: 1px solid black; */
+  border: 1px solid rgba(200, 200, 200, 1);
+  /* border-radius: 202px; */
+  box-shadow: 0 1px 1.5px 1px rgba(161, 161, 161, 0.4);
+  padding-left: 3%;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  height: auto;
+  width: 105%;
+}
+
+.phasesList > p:hover {
+  background-color: rgba(235, 251, 255, 0.624);
+}
+
+.addContainer {
+  margin-top: 1%;
+  width: 100%;
+  height: auto;
+}
+
+.input {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 200;
+  min-width: 200px;
+  max-width: 145px;
+  height: 50px;
+}
+
+.addbutton {
+  width: 245px;
+  height: 150px;
+}
