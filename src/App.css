@@ -86,10 +86,6 @@ body {
   cursor: pointer;
   outline: 0;
 }
-button > i {
+.addButton > i {
   margin-right: 10px;
-}
-button:hover {
-  color: #435a85;
-  background-color: rgba(235, 251, 255, 0.624);
 }

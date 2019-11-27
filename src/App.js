@@ -20,8 +20,15 @@ class App extends React.Component {
     }
   };
 
+  playerExists = () => {
+    return this.state.playerNames
+      .toString()
+      .toUpperCase()
+      .includes(this.state.value.toString().toUpperCase());
+  };
+
   handleAddPlayer = () => {
-    if (this.state.playerNames.includes(this.state.value)) {
+    if (this.playerExists()) {
       alert("This player is already added. Please enter a different name.");
     } else {
       this.setState(state => {
