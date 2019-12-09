@@ -1,0 +1,43 @@
+.dialog {
+  background-color: #b60000;
+  color: white;
+  display: table;
+  width: auto;
+  height: 40%;
+  padding: 12px;
+  font-size: 1.7rem;
+  font-weight: 300;
+  outline: 0;
+  margin-top: 1%;
+  margin-left: 38%;
+  font-weight: 300;
+  -webkit-animation: animate 5s forwards;
+  animation: animate 5s forwards;
+}
+
+.dialog > i {
+  margin-right: 12px;
+}
+
+@keyframes animate {
+  0% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes animate {
+  0% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

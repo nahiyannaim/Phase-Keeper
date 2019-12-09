@@ -2,21 +2,23 @@ import React from "react";
 import "./App.css";
 import Header from "./components/Header";
 import Box from "./components/Box";
+import Dialog from "./components/Dialog";
 
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
       value: "",
-      playerNames: []
+      playerNames: [],
+      warning: ""
     };
   }
 
   onChangeValue = event => {
     if (this.state.playerNames.length < 6) {
-      this.setState({ value: event.target.value });
+      this.setState({ value: event.target.value, warning: "" });
     } else {
-      alert("Maximum 6 players allowed.");
+      this.setState({ warning: "Maximum 6 players allowed!" });
     }
   };
 
@@ -29,13 +31,16 @@ class App extends React.Component {
 
   handleAddPlayer = () => {
     if (this.playerExists()) {
-      alert("This player is already added. Please enter a different name.");
+      this.setState({
+        warning: "This player is already added, please enter a different name!"
+      });
     } else {
       this.setState(state => {
         const playerNames = state.playerNames.concat(state.value);
         return {
           playerNames,
-          value: ""
+          value: "",
+          warning: ""
         };
       });
     }
@@ -71,6 +76,12 @@ class App extends React.Component {
         </button>
       </div>
     );
+  }
+
+  renderWarningDialog() {
+    return this.state.warning.length > 0 ? (
+      <Dialog message={this.state.warning} />
+    ) : null;
   }
 
   renderPhasesList() {
@@ -117,6 +128,7 @@ class App extends React.Component {
 
         <Header />
         {this.renderAddPlayerButton()}
+        {this.renderWarningDialog()}
         {this.renderPlayers()}
       </div>
     );
