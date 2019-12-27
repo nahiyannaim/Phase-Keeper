@@ -56,6 +56,12 @@ class App extends React.Component {
     }
   };
 
+  handleKeyboardPress = event => {
+    if (event.key === "Enter") {
+      this.handleAddPlayer();
+    }
+  };
+
   handlePhaseClick = (name, phaseNum) => {
     const index = this.state.mainList.findIndex(item => {
       return item.name === name;
@@ -126,6 +132,7 @@ class App extends React.Component {
           type="text"
           value={this.state.value}
           onChange={this.onChangeValue}
+          onKeyDown={this.handleKeyboardPress}
         />
         <button
           className="addButton"
