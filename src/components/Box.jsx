@@ -26,11 +26,13 @@ const Box = props => {
 
   return (
     <div className="box">
-      <button onClick={winner}>Winner</button>
-
       <div className="box-header">
         <p>{props.playerName}</p>
       </div>
+
+      <button className="winnerButton" onClick={winner} title="Phase Winner">
+        <i className="fa fa-check-circle"> </i>
+      </button>
 
       <div className="box-content"> {renderPhases()} </div>
     </div>
