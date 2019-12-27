@@ -2,7 +2,7 @@
 
 _Keep track of your phases in a Phase 10 gameplay, instead of using pen and paper. Add players, track their completed phases and calls!_
 
-<img src="./images/screenshot.PNG" width="600"/>
+<img src="./images/screenshot.png" width="600"/>
 
 ## Tracking
 
