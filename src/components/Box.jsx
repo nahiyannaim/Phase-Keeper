@@ -2,85 +2,39 @@ import React from "react";
 import "../styles/box.css";
 import Phase from "./Phase";
 
-class Box extends React.Component {
-  winner = () => {
-    this.props.handleWinner(this.props.playerName);
+const Box = props => {
+  const winner = () => {
+    props.handleWinner(props.playerName);
   };
 
-  render() {
-    return (
-      <div className="box">
-        <button onClick={this.winner}>Winner</button>
+  const renderPhases = () => {
+    let phasesList = [];
 
-        <div className="box-header">
-          <p>{this.props.playerName}</p>
-        </div>
+    for (let i = 1; i <= 10; i++) {
+      phasesList.push(
+        <Phase
+          key={i}
+          phaseNum={i}
+          playerName={props.playerName}
+          mainList={props.mainList}
+          handlePhaseClick={props.phaseClick}
+        />
+      );
+    }
+    return phasesList;
+  };
 
-        <div className="box-content">
-          <Phase
-            phaseNum={1}
-            playerName={this.props.playerName}
-            mainList={this.props.mainList}
-            handlePhaseClick={this.props.phaseClick}
-          />
-          <Phase
-            phaseNum={2}
-            playerName={this.props.playerName}
-            mainList={this.props.mainList}
-            handlePhaseClick={this.props.phaseClick}
-          />
-          <Phase
-            phaseNum={3}
-            playerName={this.props.playerName}
-            mainList={this.props.mainList}
-            handlePhaseClick={this.props.phaseClick}
-          />
-          <Phase
-            phaseNum={4}
-            playerName={this.props.playerName}
-            mainList={this.props.mainList}
-            handlePhaseClick={this.props.phaseClick}
-          />
-          <Phase
-            phaseNum={5}
-            playerName={this.props.playerName}
-            mainList={this.props.mainList}
-            handlePhaseClick={this.props.phaseClick}
-          />
-          <Phase
-            phaseNum={6}
-            playerName={this.props.playerName}
-            mainList={this.props.mainList}
-            handlePhaseClick={this.props.phaseClick}
-          />
-          <Phase
-            phaseNum={7}
-            playerName={this.props.playerName}
-            mainList={this.props.mainList}
-            handlePhaseClick={this.props.phaseClick}
-          />
-          <Phase
-            phaseNum={8}
-            playerName={this.props.playerName}
-            mainList={this.props.mainList}
-            handlePhaseClick={this.props.phaseClick}
-          />
-          <Phase
-            phaseNum={9}
-            playerName={this.props.playerName}
-            mainList={this.props.mainList}
-            handlePhaseClick={this.props.phaseClick}
-          />
-          <Phase
-            phaseNum={10}
-            playerName={this.props.playerName}
-            mainList={this.props.mainList}
-            handlePhaseClick={this.props.phaseClick}
-          />
-        </div>
+  return (
+    <div className="box">
+      <button onClick={winner}>Winner</button>
+
+      <div className="box-header">
+        <p>{props.playerName}</p>
       </div>
-    );
-  }
-}
+
+      <div className="box-content"> {renderPhases()} </div>
+    </div>
+  );
+};
 
 export default Box;
