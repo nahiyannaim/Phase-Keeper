@@ -10,7 +10,8 @@ class App extends React.Component {
     this.state = {
       value: "",
       playerNames: [],
-      warning: ""
+      warning: "",
+      mainList: []
     };
   }
 
@@ -37,20 +38,81 @@ class App extends React.Component {
     } else {
       this.setState(state => {
         const playerNames = state.playerNames.concat(state.value);
+        const mainList = [];
+        playerNames.forEach(name => {
+          mainList.push({
+            name: name,
+            phaseValues: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+          });
+        });
+
         return {
           playerNames,
           value: "",
-          warning: ""
+          warning: "",
+          mainList
         };
       });
     }
   };
 
+  handlePhaseClick = (name, phaseNum) => {
+    const index = this.state.mainList.findIndex(item => {
+      return item.name === name;
+    });
+
+    const oldValue = this.state.mainList[index].phaseValues[phaseNum - 1];
+
+    let tempList = this.state.mainList;
+
+    if (oldValue === 0) {
+      tempList[index].phaseValues[phaseNum - 1] = 1;
+      this.setState({ mainList: tempList });
+    } else if (oldValue === 1) {
+      tempList[index].phaseValues[phaseNum - 1] = 0;
+      this.setState({ mainList: tempList });
+    } else {
+      tempList[index].phaseValues[phaseNum - 1] = 0;
+      this.setState({ mainList: tempList });
+    }
+  };
+
+  handleWinner = name => {
+    const tempList = this.state.mainList;
+    const winnerIndex = tempList.findIndex(item => item.name === name);
+
+    // Set Winning player phase to complete (2)
+    for (let i = 0; i < tempList[winnerIndex].phaseValues.length; i++) {
+      if (tempList[winnerIndex].phaseValues[i] === 1) {
+        tempList[winnerIndex].phaseValues[i] = 2;
+      }
+    }
+
+    // Reset phase calls for other players (0)
+    Object.keys(tempList).forEach(key => {
+      for (let i = 0; i < tempList[Number(key)].phaseValues.length; i++) {
+        if (tempList[Number(key)].phaseValues[i] === 1) {
+          tempList[Number(key)].phaseValues[i] = 0;
+        }
+      }
+    });
+
+    this.setState({ mainList: tempList });
+  };
+
   renderPlayers() {
     let playerNamesList = [];
 
-    this.state.playerNames.forEach(name => {
-      playerNamesList.push(<Box key={name} playerName={name} />);
+    this.state.mainList.forEach(name => {
+      playerNamesList.push(
+        <Box
+          key={name.name}
+          playerName={name.name}
+          mainList={this.state.mainList}
+          phaseClick={this.handlePhaseClick}
+          handleWinner={this.handleWinner}
+        />
+      );
     });
 
     return <div className="playersBoxes">{playerNamesList}</div>;

@@ -2,34 +2,26 @@ import React from "react";
 import "../styles/phase.css";
 
 class Phase extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      value: 0
-    };
-  }
-  handlePhaseClick = () => {
-    if (this.state.value === 0) {
-      this.setState({ value: 1 });
-    } else if (this.state.value === 1) {
-      this.setState({ value: 0 });
-    } else {
-      this.setState({ value: 0 });
-    }
-  };
-
-  handlePhaseDoubleClick = () => {
-    this.setState({ value: 2 });
-  };
-
   getClassName = () => {
-    if (this.state.value === 0) {
+    const index = this.props.mainList.findIndex(item => {
+      return item.name === this.props.playerName;
+    });
+
+    const currentValue = this.props.mainList[index].phaseValues[
+      this.props.phaseNum - 1
+    ];
+
+    if (currentValue === 0) {
       return "phase-circle-default";
-    } else if (this.state.value === 1) {
+    } else if (currentValue === 1) {
       return "phase-circle-call";
     } else {
       return "phase-circle-complete";
     }
+  };
+
+  phaseClick = () => {
+    this.props.handlePhaseClick(this.props.playerName, this.props.phaseNum);
   };
 
   render() {
@@ -37,8 +29,7 @@ class Phase extends React.Component {
       <button
         className={this.getClassName()}
         type="button"
-        onClick={this.handlePhaseClick}
-        onDoubleClick={this.handlePhaseDoubleClick}
+        onClick={this.phaseClick}
       >
         <p className="phase-number">{this.props.phaseNum}</p>
       </button>
