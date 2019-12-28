@@ -106,6 +106,25 @@ class App extends React.Component {
     this.setState({ mainList: tempList });
   };
 
+  handleDeletePlayer = name => {
+    const tempMain = this.state.mainList;
+    const tempNames = this.state.playerNames;
+    let deleteIndex = -1;
+
+    deleteIndex = tempMain.findIndex(item => item.name === name);
+
+    if (deleteIndex !== -1) {
+      tempMain.splice(deleteIndex, 1);
+
+      deleteIndex = tempNames.findIndex(item => item === name);
+      if (deleteIndex !== -1) {
+        tempNames.splice(deleteIndex, 1);
+      }
+    }
+
+    this.setState({ mainList: tempMain, playerNames: tempNames });
+  };
+
   renderPlayers() {
     let playerNamesList = [];
 
@@ -117,6 +136,7 @@ class App extends React.Component {
           mainList={this.state.mainList}
           phaseClick={this.handlePhaseClick}
           handleWinner={this.handleWinner}
+          handleDeletePlayer={this.handleDeletePlayer}
         />
       );
     });

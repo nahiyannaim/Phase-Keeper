@@ -24,7 +24,12 @@ const Phase = props => {
   };
 
   return (
-    <button className={getClassName()} type="button" onClick={phaseClick}>
+    <button
+      className={getClassName()}
+      type="button"
+      onClick={phaseClick}
+      title="Call Phase"
+    >
       <p className="phase-number">{props.phaseNum}</p>
     </button>
   );

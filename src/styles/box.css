@@ -38,7 +38,24 @@
   outline: 0;
   font-size: 3rem;
 }
+
 .winnerButton:hover {
   color: rgb(110, 184, 0);
+  background-color: white;
+}
+
+.deleteButton {
+  color: rgba(116, 116, 116, 0.213);
+  cursor: pointer;
+  float: left;
+  margin-left: 6px;
+  margin-top: -76px;
+  border: none;
+  outline: 0;
+  font-size: 1.8rem;
+}
+
+.deleteButton:hover {
+  color: rgb(201, 0, 0);
   background-color: white;
 }
