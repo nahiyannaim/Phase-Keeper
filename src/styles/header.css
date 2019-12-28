@@ -9,3 +9,9 @@
   font-weight: 200;
   color: rgb(255, 255, 255);
 }
+
+@media all and (max-width: 725px) {
+  .header {
+    width: 250%;
+  }
+}
