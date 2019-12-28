@@ -169,7 +169,7 @@ class App extends React.Component {
           <strong>Phase 4 </strong> : 1 run of 7
         </p>
         <p>
-          <strong>Phase 5 </strong> : 1 run of 8{" "}
+          <strong>Phase 5 </strong> : 1 run of 8
         </p>
         <p>
           <strong>Phase 6 </strong> : 1 run of 9
@@ -194,7 +194,6 @@ class App extends React.Component {
     return (
       <div className="App">
         {this.renderPhasesList()}
-
         <Header />
         {this.renderAddPlayerButton()}
         {this.renderWarningDialog()}

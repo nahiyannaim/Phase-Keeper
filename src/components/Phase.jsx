@@ -8,14 +8,15 @@ const Phase = props => {
     });
 
     const currentValue = props.mainList[index].phaseValues[props.phaseNum - 1];
+    let className = "phase-circle-complete";
 
     if (currentValue === 0) {
-      return "phase-circle-default";
+      className = "phase-circle-default";
     } else if (currentValue === 1) {
-      return "phase-circle-call";
-    } else {
-      return "phase-circle-complete";
+      className = "phase-circle-call";
     }
+
+    return className;
   };
 
   const phaseClick = () => {

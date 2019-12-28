@@ -5,20 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-.App {
   text-align: center;
-  /* background: radial-gradient(
-      circle at top left,
-      rgb(255, 255, 255),
-      rgba(255, 255, 255, 0)
-    ),
-    radial-gradient(
-      circle at bottom left,
-      rgba(166, 234, 243, 0.842),
-      rgba(255, 255, 255, 0)
-    ); */
 }
 
 .playersBoxes {
