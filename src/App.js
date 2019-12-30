@@ -9,10 +9,15 @@ class App extends React.Component {
     super();
     this.state = {
       value: "",
+      raceVal: 1,
       playerNames: [],
       warning: "",
-      mainList: []
+      mainList: [],
+      winnerName: "",
+      gameCompleted: false
     };
+
+    this.handleRaceValueChange = this.handleRaceValueChange.bind(this);
   }
 
   onChangeValue = event => {
@@ -86,11 +91,20 @@ class App extends React.Component {
   handleWinner = name => {
     const tempList = this.state.mainList;
     const winnerIndex = tempList.findIndex(item => item.name === name);
+    let completedPhases = 0;
+    let winnerName = tempList[winnerIndex].name;
 
     // Set Winning player phase to complete (2)
     for (let i = 0; i < tempList[winnerIndex].phaseValues.length; i++) {
       if (tempList[winnerIndex].phaseValues[i] === 1) {
         tempList[winnerIndex].phaseValues[i] = 2;
+      }
+    }
+
+    // Count the number of completed phases for this winner so far
+    for (let i = 0; i < tempList[winnerIndex].phaseValues.length; i++) {
+      if (tempList[winnerIndex].phaseValues[i] === 2) {
+        completedPhases++;
       }
     }
 
@@ -103,7 +117,19 @@ class App extends React.Component {
       }
     });
 
-    this.setState({ mainList: tempList });
+    // If completed phases for this winner is same as the race number, game is complete
+    if (completedPhases >= this.state.raceVal) {
+      this.setState({
+        mainList: tempList,
+        gameCompleted: true,
+        winnerName: winnerName
+      });
+    } else {
+      this.setState({
+        mainList: tempList,
+        gameCompleted: false
+      });
+    }
   };
 
   handleDeletePlayer = name => {
@@ -167,10 +193,51 @@ class App extends React.Component {
     );
   }
 
+  handleRaceValueChange(event) {
+    this.setState({ raceVal: event.target.value });
+  }
+
+  renderRace() {
+    return (
+      <div className="raceContainer">
+        <label>
+          Race to
+          <select
+            className="race-dropdown"
+            value={this.state.raceVal}
+            onChange={this.handleRaceValueChange}
+          >
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+          </select>
+        </label>
+      </div>
+    );
+  }
+
   renderWarningDialog() {
     return this.state.warning.length > 0 ? (
-      <Dialog message={this.state.warning} />
+      <Dialog message={this.state.warning} isWarning />
     ) : null;
+  }
+
+  renderGameCompleted() {
+    return (
+      this.state.gameCompleted && (
+        <Dialog
+          message={this.state.winnerName + " Winner!"}
+          isWarning={false}
+        />
+      )
+    );
   }
 
   renderPhasesList() {
@@ -213,9 +280,11 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        {this.renderPhasesList()}
         <Header />
+        {this.renderRace()}
+        {this.renderPhasesList()}
         {this.renderAddPlayerButton()}
+        {this.renderGameCompleted()}
         {this.renderWarningDialog()}
         {this.renderPlayers()}
       </div>

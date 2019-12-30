@@ -19,7 +19,7 @@ body {
 .phasesList {
   cursor: pointer;
   margin-left: 80%;
-  margin-top: 10%;
+  margin-top: 2%;
   position: fixed;
   text-align: left;
   float: right;
@@ -53,7 +53,7 @@ body {
 }
 
 .addContainer {
-  margin-top: 1%;
+  margin-top: -4%;
   width: 100%;
   height: auto;
   position: relative;
@@ -92,4 +92,20 @@ body {
     height: 100%;
     width: 50%;
   }
+}
+
+.raceContainer {
+  color: #435a85;
+  margin-top: 3%;
+  margin-left: 75%;
+  font-size: 2.4rem;
+  font-weight: 200;
+}
+
+.race-dropdown {
+  color: #435a85;
+  font-size: 1.6rem;
+  margin-left: 3%;
+  cursor: pointer;
+  outline: 0;
 }

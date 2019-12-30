@@ -15,6 +15,26 @@
   animation: animate 5s forwards;
 }
 
+.dialog-winner {
+  border-radius: 25px;
+  box-shadow: 0 3px 5px 3px rgba(161, 161, 161, 0.4);
+  background-color: #81c6f594;
+  color: white;
+  display: table;
+  width: auto;
+  height: 75%;
+  padding: 30px;
+  font-size: 3.5rem;
+  letter-spacing: 10pt;
+  word-spacing: 7pt;
+  font-weight: 300;
+  outline: 0;
+  margin-top: 2%;
+  margin-left: 36%;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
 .dialog > i {
   margin-right: 12px;
 }

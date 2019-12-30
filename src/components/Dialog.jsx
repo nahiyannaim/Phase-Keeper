@@ -3,8 +3,8 @@ import "../styles/dialog.css";
 
 const Dialog = props => {
   return (
-    <div className="dialog">
-      <i className="fa fa-exclamation-triangle"> </i>
+    <div className={props.isWarning ? "dialog" : "dialog-winner"}>
+      {props.isWarning && <i className="fa fa-exclamation-triangle"> </i>}
       {props.message}
     </div>
   );
