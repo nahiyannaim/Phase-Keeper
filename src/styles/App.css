@@ -31,8 +31,8 @@ body {
 @media all and (max-width: 950px) {
   .phasesList {
     position: absolute;
-    top: 25%;
-    right: -132%;
+    top: 45%;
+    right: -550px;
     width: auto;
   }
 }
@@ -89,7 +89,7 @@ body {
 
 @media all and (max-width: 950px) {
   .addButton {
-    height: 100%;
+    height: 45%;
     width: 50%;
   }
 }
@@ -108,4 +108,13 @@ body {
   margin-left: 3%;
   cursor: pointer;
   outline: 0;
+}
+
+@media all and (max-width: 950px) {
+  .raceContainer {
+    float: left;
+    height: auto;
+    width: 100%;
+    margin-bottom: 5%;
+  }
 }
