@@ -1,4 +1,5 @@
-import React from "react";
+import React, { Fragment } from "react";
+import Confetti from "react-confetti";
 import "./styles/App.css";
 import Header from "./components/Header";
 import Box from "./components/Box";
@@ -232,10 +233,13 @@ class App extends React.Component {
   renderGameCompleted() {
     return (
       this.state.gameCompleted && (
-        <Dialog
-          message={this.state.winnerName + " Winner!"}
-          isWarning={false}
-        />
+        <Fragment>
+          <Confetti />
+          <Dialog
+            message={this.state.winnerName + " Winner!"}
+            isWarning={false}
+          />
+        </Fragment>
       )
     );
   }
