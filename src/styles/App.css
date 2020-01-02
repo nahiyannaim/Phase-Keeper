@@ -11,16 +11,15 @@ body {
 .playersBoxes {
   left: 0;
   width: 75%;
-  margin-left: -22%;
-  margin-top: 1%;
+  margin-left: 0%;
+  margin-top: 3%;
   display: inline-block;
 }
 
 .phasesList {
   cursor: pointer;
-  margin-left: 80%;
-  margin-top: 2%;
-  position: fixed;
+  margin-right: 3%;
+  margin-top: 6%;
   text-align: left;
   float: right;
   font-size: 1.6rem;
@@ -53,10 +52,18 @@ body {
 }
 
 .addContainer {
-  margin-top: -4%;
-  width: 100%;
-  height: auto;
-  position: relative;
+  margin-left: 37%;
+  margin-top: 1%;
+  max-width: 18%;
+}
+
+@media all and (max-width: 950px) {
+  .addContainer {
+    float: left;
+    margin-left: 0%;
+    margin-bottom: 20%;
+    width: 100%;
+  }
 }
 
 .input {
@@ -83,38 +90,32 @@ body {
   outline: 0;
 }
 
+@media all and (max-width: 950px) {
+  .addButton {
+    margin-left: -8%;
+    width: 200px;
+    height: 60px;
+  }
+}
+
 .addButton > i {
   margin-right: 10px;
 }
 
-@media all and (max-width: 950px) {
-  .addButton {
-    height: 45%;
-    width: 50%;
-  }
-}
-
 .raceContainer {
   color: #435a85;
-  margin-top: 3%;
-  margin-left: 75%;
-  font-size: 2.4rem;
+  font-size: 2.6rem;
   font-weight: 200;
+  float: left;
+  margin-left: 0.5%;
+  margin-top: 1%;
+  min-width: 250px;
 }
 
 .race-dropdown {
   color: #435a85;
-  font-size: 1.6rem;
-  margin-left: 3%;
+  font-size: 1.8rem;
+  margin-left: 5%;
   cursor: pointer;
   outline: 0;
-}
-
-@media all and (max-width: 950px) {
-  .raceContainer {
-    float: left;
-    height: auto;
-    width: 100%;
-    margin-bottom: 5%;
-  }
 }
