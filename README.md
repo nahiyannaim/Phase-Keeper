@@ -2,7 +2,7 @@
 
 _Keep track of your phases in a Phase 10 gameplay, instead of using pen and paper. Add players, track their completed phases and calls!_
 
-[![Build Status](https://travis-ci.com/nahiyannaim/Phase-Keeper.svg?branch=master)](https://travis-ci.com/nahiyannaim/Phase-Keeper) [![HitCount](http://hits.dwyl.io/nahiyannaim/https://githubcom/nahiyannaim/Phase-Keeper.svg)](http://hits.dwyl.io/nahiyannaim/https://githubcom/nahiyannaim/Phase-Keeper)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/1b5ceb34-f6a5-41c7-94c9-243cffa10a8d/deploy-status)](https://app.netlify.com/sites/nnaim/deploys) [![Build Status](https://travis-ci.com/nahiyannaim/Phase-Keeper.svg?branch=master)](https://travis-ci.com/nahiyannaim/Phase-Keeper) [![HitCount](http://hits.dwyl.io/nahiyannaim/https://githubcom/nahiyannaim/Phase-Keeper.svg)](http://hits.dwyl.io/nahiyannaim/https://githubcom/nahiyannaim/Phase-Keeper)
 
 <img src="./images/screenshot.png" width="900"/>
 
