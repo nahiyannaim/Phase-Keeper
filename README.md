@@ -11,7 +11,7 @@ _Keep track of your phases in a Phase 10 gameplay, instead of using pen and pape
 - Add players and set the race number. First person to complete the race number of phases will win
 - Click on a phase number for a given player to indicate their call in a round
 - Calls would be indicated by blue background
-- When a player wins a round, click on the check mark for the corresponding player
+- When a player wins a round, click on the check mark for that corresponding player
 - This will mark the winning phase as green for the winning player and clear the calls for rest of the players
 
 ## Setup
