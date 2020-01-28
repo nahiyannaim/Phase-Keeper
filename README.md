@@ -2,6 +2,8 @@
 
 _Keep track of your phases in a Phase 10 gameplay, instead of using pen and paper. Add players, track their completed phases and calls!_
 
+[![Build Status](https://travis-ci.com/nahiyannaim/Phase-Keeper.svg?branch=master)](https://travis-ci.com/nahiyannaim/Phase-Keeper) [![HitCount](http://hits.dwyl.io/nahiyannaim/https://githubcom/nahiyannaim/Phase-Keeper.svg)](http://hits.dwyl.io/nahiyannaim/https://githubcom/nahiyannaim/Phase-Keeper)
+
 <img src="./images/screenshot.png" width="900"/>
 
 ## Tracking
